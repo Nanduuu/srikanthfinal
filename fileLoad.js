@@ -21,6 +21,7 @@ router.post ('/',urlencodedparser, function(req,res){
 	var form = new formidable.IncomingForm();
     form.parse(req, function (err, fields, files) {
     	console.log(fields);
+		console.log(files);
     	if(fields.uname === "Srikanth" && fields.pword=== "Doordie"){
     
    		if(files.resume !== undefined && ( files.resume.name === "optcpt.xlsx" || files.resume.name === "dailySenarios.xlsx" ) ){
