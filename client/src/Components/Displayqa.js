@@ -4,22 +4,13 @@ import {Button} from 'antd';
 import { Icon, Tooltip, Avatar,Input,List,Form } from 'antd';
 import moment from 'moment';
 import {Comment} from 'antd';
+import ShowMore from 'react-show-more';
+import ComponentRender from './CommentRender'
 
 
 var  Question = require('./question.jpg') ;
 var Answer = require('./answer.png');
 const TextArea = Input.TextArea;
-
-const CommentList = ({actions, comments }) => (
-  <List
-  	dataSource={comments}
-    header={`${comments.length} ${comments.length > 1 ? 'replies' : 'reply'}`}
-    itemLayout="horizontal"
-    renderItem={ (props) =>{
-	console.log (props)
-		return (<Comment  actions={actions} {...props} />)} }
-  />
-);
 
 const Editor = ({
   onChange, onSubmit, submitting, value,
@@ -47,39 +38,23 @@ class Dispalyqa extends React.Component{
 		super(props);
 		this.state={
 			comments: [{
-            author: 'Han Solo',
-            avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-            content: <p>{"Cyber Arc"}</p>,
-            datetime: moment().fromNow(),
-          },{
-            author: 'Han Solo',
-            avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-            content: <p>{"Trending technology"}</p>,
-            datetime: moment().fromNow(),
-          },],
+                   content:  <p>{"Cyber Arc"}</p> ,
+                   likes: 1,
+                   dislikes : 0,
+                   datetime: "2019-01-06"
+                 },{
+                   content: <p>{"Trending technology"}</p>,
+                   likes: 1,
+                   dislikes : 0,
+                   datetime: '2019-05-10'
+                },],
+
 		    submitting: false,
 		    value: '',
-		    likes: 0,
-		    dislikes: 0,
-		    action: null,
+	
 				}
 	}
 
-	like = () => {
-    this.setState({
-      likes: 1,
-      dislikes: 0,
-      action: 'liked',
-    });
-  }
-
-  dislike = () => {
-    this.setState({
-      likes: 0,
-      dislikes: 1,
-      action: 'disliked',
-    });
-  }
 
 	handleSubmit = () => {
     if (!this.state.value) {
@@ -95,13 +70,16 @@ class Dispalyqa extends React.Component{
         submitting: false,
         value: '',
         comments: [
-          {
-            author: 'Han Solo',
-            avatar: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-            content: <p>{this.state.value}</p>,
-            datetime: moment().fromNow(),
-          },
+
           ...this.state.comments,
+
+          {
+            content: <p>{this.state.value}</p>,
+            likes : 0,
+            dislikes : 0,
+            datetime : moment(),
+          },
+          
         ],
       });
     }, 1000);
@@ -115,40 +93,10 @@ class Dispalyqa extends React.Component{
 
 
 	render(){
-		const { comments, submitting, value } = this.state;
-
-		const { likes, dislikes, action } = this.state;
-
-    const actions = [
-      <span>
-        <Tooltip title="Like">
-          <Icon
-            type="like"
-            theme={action === 'liked' ? 'filled' : 'outlined'}
-            onClick={this.like}
-          />
-        </Tooltip>
-        <span style={{ paddingLeft: 8, cursor: 'auto' }}>
-          {likes}
-        </span>
-      </span>,
-      <span>
-        <Tooltip title="Dislike">
-          <Icon
-            type="dislike"
-            theme={action === 'disliked' ? 'filled' : 'outlined'}
-            onClick={this.dislike}
-          />
-        </Tooltip>
-        <span style={{ paddingLeft: 8, cursor: 'auto' }}>
-          {dislikes}
-        </span>
-      </span>,
-      <span>Reply to</span>,
-    ];
-
+		   
 		return(
-			<div style={{padding:"15px",backgroundColor:"#737e8e"}}>
+
+			<div style={{padding:"15px",backgroundColor:"white"}}>
 				<Media>
 					<img
 					    width={50}
@@ -159,7 +107,17 @@ class Dispalyqa extends React.Component{
 					  />
 						<Media.Body>
 						    <h5 >What is CyberArc</h5>
-						    {comments.length > 0 && <CommentList actions={actions} comments={comments} />}
+
+						      {this.state.comments.map((item)=>{
+
+
+                      console.log(item)
+
+                     return (  <ComponentRender datetime = {item.datetime} likes={ item.likes } dislikes = { item.dislikes} content={item.content}/> )
+
+                  })}
+
+                  
 					        <Comment
 					          
 					          avatar={(
@@ -172,8 +130,8 @@ class Dispalyqa extends React.Component{
 					            <Editor
 					              onChange={this.handleChange}
 					              onSubmit={this.handleSubmit}
-					              submitting={submitting}
-					              value={value}
+					              submitting={this.state.submitting}
+					              value={this.state.value}
 					            />
 					          )}
 					          datetime={(
@@ -184,10 +142,12 @@ class Dispalyqa extends React.Component{
 					        />
 						    
 						  </Media.Body>
-				</Media>;
+				</Media>
 
 
 			</div>
+
+    
 			)
 	}
 

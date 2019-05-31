@@ -170,7 +170,7 @@ render(){
 
 						<Col>
 						
-						<Input type="submit"/> 
+						<Input type="submit" value="Submit"/> 
 						
 												
 						</Col>

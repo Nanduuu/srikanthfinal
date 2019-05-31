@@ -12,14 +12,11 @@ import SubmitForm from'./SubmitForm';
 import Optcpt from "./Optcpt";
 import DailySenarios from "./DailySenarios";
 import {connect} from 'react-redux';
-import { TransitionGroup, CSSTransition } from "react-transition-group";
-import styled from 'styled-components';
+
 import Media from "react-media";
 import Login from "./Login";
 
-const bodyStyle = {
-    backgroundColor : '#0066ff'
-}
+
 const { Header, Content, Footer , Sider} = Layout;
 
 const fontStyle ={
@@ -97,7 +94,7 @@ class Frame extends React.Component{
                 theme="light"
                 mode="horizontal"
                 defaultSelectedKeys={['1']}
-                style={{ background:"white", lineHeight: '50px' ,color : "block" }}
+                style={{ lineHeight: '50px', backgroundColor : 'black',color:'white'}}
               >
               <Menu.Item key="1" style={{ fontSize:"20px",width:"20%",overflow:"hidden" ,textOverflow: 'ellipsis'}}>
                   <Media query="(min-width: 720px)">
@@ -176,27 +173,28 @@ class Frame extends React.Component{
             </Col>
             </Row>
     				
-      			
+      			</Layout>
                
              <Row >
-              <Content>
-              <Col md={24} lg={24} sm={24} style={{padding:"0px",backgroundColor:"#001628"}} >
-                  
-                    <Switch>
-                      <Route exact path= {"/"} component={Home}/>                                                           
-                      <Route path= {'/Why27k' } component={Why27k}/>
-                      <Route path= {'/Testimonials' } component={Testimonials}/>
-                      <Route path= {'/Contactus' } component={Contactus}/>
-                      <Route path= {'/Optcpt' } component={Optcpt}/>
-                      <Route path= {'/DailySenarios' } component={DailySenarios}/>
-                      <Route path= {'/SubmitForm' } component={SubmitForm}/>
-                      <Route path={'/Login'} component={Login}/>
+              
+                  <Col md={24} lg={24} sm={24} style={{padding:"0px"}} >
                       
-                    </Switch>
-              </Col>
-              </Content>
+                        <Switch>
+                          <Route exact path= {"/"} component={Home}/>                                                           
+                          <Route path= {'/Why27k' } component={Why27k}/>
+                          <Route path= {'/Testimonials' } component={Testimonials}/>
+                          <Route path= {'/Contactus' } component={Contactus}/>
+                          <Route path= {'/Optcpt' } component={Optcpt}/>
+                          <Route path= {'/DailySenarios' } component={DailySenarios}/>
+                          <Route path= {'/SubmitForm' } component={SubmitForm}/>
+                          <Route path={'/Login'} component={Login}/>
+                          
+                          
+                        </Switch>
+                  </Col>
+             
               </Row>
-            </Layout>
+            
           </Row>
 				</div>
 				);

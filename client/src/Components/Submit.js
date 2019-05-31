@@ -169,10 +169,11 @@ class Submit extends React.Component{
 
              					 
 						    </Row>
-						    <div>
-						    <Button type="submit" style={{ margin:"10px",color:"black"}} onClick = {this.handleSubmit} value = "Submit" type="primary" /> 
+						    <div style={ {color:"black"}}>
+						   			 <Input type="submit" style={{ margin:"10px"}} onClick = {this.handleSubmit} value = "Submit" type="primary" /> 
 						    
 						    </div>
+						    <input/>
 			        </Form>
 			                 
 			        </Drawer>

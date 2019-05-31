@@ -1,7 +1,7 @@
 import React from 'react';
 import Sider from './Sider';
 import { Drawer, Button } from 'antd';
-
+import './HideSider.css';
 
   
 
@@ -27,10 +27,12 @@ class HideSider extends  React.Component{
 
   render() {
     return (
-      <div>
-        <Button type="primary" onClick={this.showDrawer}>
+      <div id="border">
+
+        <Button className="button" type="primary" onClick={this.showDrawer}>
           Technologies
         </Button>
+
         <Drawer
           title="Technologies"
           placement="right"
@@ -38,7 +40,7 @@ class HideSider extends  React.Component{
           onClose={this.onClose}
           visible={this.state.visible}
         >
-          <Sider/>
+          <Sider tech_num = {this.props.tech_num}  />
         </Drawer>
       </div>
     );

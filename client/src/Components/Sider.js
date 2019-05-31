@@ -11,24 +11,38 @@ class Sider extends  React.Component{
 			selected_flex_sider_element : "selected-flex-sider-element",
 			selected : "CyberArk",
 		}
-
 	}
 
 	changeCss = (e)=>{
+
+		var techs = [ "CyberArk", "Sailpoint" , "Splunk" ,"Devops","AWS","C,C++","Salesforce (Both Admin and Developer)" ,
+						"Big Data",  "Tableau", "QlikView" , "Cognos" , "BLOCKCHAIN",  "Ping federate" , "CA Siteminder",
+						"Ping Access" , "NetIQ" , "NetIQ Governance and Access manager", "ISAM", "WebSphere (Both Admin and Developer)",
+						"Weblogic (Both Admin and Developer)", "IDM","SSO","Embedded IOT","RUBY on RAILS", "MICROSTRATEGY",
+						"Sharepoint (Both Admin and Developer)","SAS","Full stack Developer","Angular2,Angular3","ETL,Datastage",
+						"Qlikview","Qliksense","Tableau","Microstrategy","Data science","BIG Data Hadoop","Artifical Intelligence",
+						"R","Python","Machine learning","SQl,PLSQL","Testing (Manual,Automation)","Java backend (Struts, Hybernates)",
+						"CCNA,CCNP,CCIE","Linux,shell scripting"
+					]
+
+		
+
 		console.log(e.target.id)
 		this.setState({
 			selected:e.target.id,
 		})
+		
+		this.props.tech_num(techs.indexOf(e.target.id))
 	}
 
 	render(){
 		return(
 			<div className="flex-sider-container" id="style-1">
-				<div id="CyberArk" onClick={this.changeCss}  className={this.state.selected == "CyberArk" ? "selected-flex-sider-element" : "flex-sider-element"}>
+				<div id="CyberArk" name = {1} onClick = { this.changeCss }  className={this.state.selected == "CyberArk" ? "selected-flex-sider-element" : "flex-sider-element"}>
 						CyberArk
 				</div>
 
-				<div id="Sailpoint" onClick={this.changeCss}  className={this.state.selected == "Sailpoint" ? "selected-flex-sider-element" : "flex-sider-element"}>
+				<div id="Sailpoint" name={2} onClick={this.changeCss}  className={this.state.selected == "Sailpoint" ? "selected-flex-sider-element" : "flex-sider-element"}>
 						Sailpoint
 				</div>
 
@@ -152,10 +166,7 @@ class Sider extends  React.Component{
 						Qliksense
 				</div>
 
-				<div id="Tableau" onClick={this.changeCss}  className={this.state.selected == "Tableau" ? "selected-flex-sider-element" : "flex-sider-element"} >
-						Tableau
-				</div>
-
+				
 				<div id="Microstrategy" onClick={this.changeCss}  className={this.state.selected == "Microstrategy" ? "selected-flex-sider-element" : "flex-sider-element"} >
 						Microstrategy
 				</div>

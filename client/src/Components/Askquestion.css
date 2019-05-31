@@ -12,9 +12,9 @@ p {
 
 .search-display {
  	margin: 10px;
- 	padding: 10px;
- 	background-color: #a9c4f2;
- 	border-radius: 10px;
+ 	padding: 1px;
+ 	
+ 	
  }
 
 .search-hide {
@@ -24,23 +24,26 @@ p {
 
 .askButton {
 
-	background-color: gray;
-	color: black;
+	background-color: #35383d;
+	color: white;
 	width: 50%;
-	border-width: 1px;
 	overflow-x: hidden;
 	display: inline;
-	border-radius: 5px;
 	text-decoration: none;
 	border-color: none;
+	border :0px;
+	font-weight: bold;
+	border-radius: 3px;
+
 
 }
 
 .askButton:hover {
 
-	background-color: white;
+	background-color: #2f518c;
 	font-weight: bold;
-	color:black;
+	
+	
 }
 
 .askButton:focus {

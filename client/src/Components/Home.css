@@ -4,23 +4,26 @@ p {
 
 
 .mega:hover {
-  background-color: #f7f8f9;
+  background-color: #242526;
   cursor: pointer;
-  color: black;
+  color: white;
 
 }
 
 .mega {
-  background-color: grey;
-  cursor: pointer;
-  color: white;
   
+  cursor: pointer;
+  color: black;
+  text-decoration: underline;
+  font-weight: bold;
+
 }
 
 .flex-container {
 	display: flex;
 	padding:0px 0px 10px 0px;
 	align-content: space-around;
+	
 
 }
 
@@ -29,10 +32,7 @@ p {
 	padding:0px 0px 10px 0px;
 	align-content: space-around;
 	align-items: stretch;
-
-
 }
-
 
 
 .flex-element-input1 {
@@ -42,13 +42,15 @@ p {
 
 .flex-element-input2 {
 	flex: 1;
+
 	
 }
 
 .flex-element1 {
 	flex: 1;
-	background-color: #001628;
-	padding: 20px;
+	padding: 0px;
+	display: fixed;
+	background-color: #35383d;
 }
 
 .flex-element3 {
@@ -61,13 +63,17 @@ p {
 .flex-element2 {
 	flex: 3;
 	margin: 0px;
-	padding: 10px;
+	padding: 30px;
+	background-color: white;
 
 }
 
 .submit {
-	background-color: #001628;
-	border-bottom: 1px solid white;
+	
+	border-bottom: 1px solid black;
+	text-align: center;
+	background-color: white
+
 }
 
 .margin-clear {
