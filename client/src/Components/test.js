@@ -14,3 +14,13 @@
                                                   <a href="https://mail.google.com/mail/?view=cm&fs=1&to=27tekmasters@gmail.com&su=SUBJECT&body=BODY" target="_blank"><Button><Icon type="google" theme="outlined" /></Button></a>
                                                   </Col>
                                     </Footer>
+
+
+
+
+<div className="flex-element2">
+                                         
+                                          <Displayqa tech_num = { this.state.tech_num } />
+                                       </div>
+
+

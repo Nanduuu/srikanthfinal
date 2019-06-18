@@ -1,15 +1,11 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 import Frame from './Components/Frame';
-import 'antd/dist/antd.css';
-import WebFont from 'webfontloader';
-import {BrowserRouter} from 'react-router-dom';
-import {Route , Switch, Redirect} from 'react-router';
-import Login from './Components/Login';
-import Logo from './Components/Logo';
-import Fileload from './Components/Fileload';
+import Logo from './Components/Logo/Logo';
 
+import React, { Component } from 'react';
+
+import 'antd/dist/antd.css';
+import './App.css';
+import WebFont from 'webfontloader';
 
 
 const fontStyle = {

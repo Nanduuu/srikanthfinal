@@ -1,0 +1,50 @@
+.mega:hover {
+  background-color: #b299e6;
+  cursor: pointer;
+}
+
+.flex-sider-container {
+	display: flex;
+	flex-flow: column;
+	align-content: space-around;
+	align-items: stretch;
+	position: sticky;
+	margin-right: 0px;
+	margin-left: 0px;
+	
+}
+
+.flex-sider-element {
+
+	margin:0px 0px ;
+	padding: 10px;
+	background-color: #35383d;
+	cursor: pointer;
+	color: white;
+	flex-grow: 1;
+	border-radius: 0px;
+}
+
+.selected-flex-sider-element {
+	
+	margin:0px 0px ;
+	padding: 10px;
+	background-color: white;
+	cursor: pointer;
+	color: black;
+	flex-grow: 1;
+
+	
+
+}
+
+.flex-sider-element:hover{
+	background-color: white;
+	box-shadow: 1px 1px 1px white;
+	color: black;
+
+}
+
+
+
+

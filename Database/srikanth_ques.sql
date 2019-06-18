@@ -37,7 +37,7 @@ CREATE TABLE `ques` (
 
 LOCK TABLES `ques` WRITE;
 /*!40000 ALTER TABLE `ques` DISABLE KEYS */;
-INSERT INTO `ques` VALUES (1,1,'What is CyberArc','2019-05-13 03:16:32'),(2,1,'WHY CYBERARK','2019-05-13 03:19:20'),(3,1,'What is cyber Arc','2019-05-24 04:46:17'),(4,4,'what is Devops ?','2019-05-31 01:45:39'),(5,1,'what is cyber Ark ?','2019-05-31 01:53:14'),(6,1,'hahaha','2019-05-31 01:56:06'),(7,1,'what ','2019-05-31 01:57:14'),(8,1,'what ','2019-05-31 01:58:12'),(9,1,'what is ark','2019-05-31 01:58:34'),(10,1,'what ','2019-05-31 01:59:16'),(11,1,'what ','2019-05-31 02:02:49'),(12,1,'what ','2019-05-31 02:04:05'),(13,7,'what ','2019-05-31 02:13:34'),(14,8,'Hello','2019-05-31 02:45:03');
+INSERT INTO `ques` VALUES (1,1,'What is CyberArc','2019-05-13 03:16:32'),(4,4,'what is Devops ?','2019-05-31 01:45:39'),(5,1,'what is cyber Ark ?','2019-05-31 01:53:14'),(15,8,'What is big data ? ','2019-06-03 01:53:26'),(16,1,'Explain what is cyber Ark ?','2019-06-17 09:15:05'),(17,3,'Explain what is Splunk ?','2019-06-17 09:16:34'),(18,1,'since from when cybarark?','2019-06-17 10:54:43');
 /*!40000 ALTER TABLE `ques` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-05-31  3:34:41
+-- Dump completed on 2019-06-18  6:17:58

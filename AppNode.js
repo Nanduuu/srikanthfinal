@@ -10,7 +10,10 @@ var dailySenarios = require('./dailySenarios');
 var fileupload = require('./fileLoad');
 var path = require("path");
 var postQuesion = require("./postQuestion");
-
+var postAnswer = require("./postAnswer");
+var getquestions = require("./getquestions");
+var getAnswers = require ("./getAnswers");
+var postLikeDislike = require('./postLikeDislike');
 
 
 
@@ -28,7 +31,10 @@ app.use('/api/optcpt/',optcpt);
 app.use('/api/dailySenarios/',dailySenarios);
 app.use('/api/fileLoad/', fileupload);
 app.use('/api/postQuestion/',postQuesion);
-
+app.use('/api/postAnswer/',postAnswer);
+app.use('/api/getquestions/',getquestions);
+app.use('/api/getAnswers/',getAnswers);
+app.use('/api/postLikeDislike/',postLikeDislike)
 
 
 app.use(bodyParser.json());

@@ -1,0 +1,43 @@
+.header {
+	background-color: #35383d;
+	display: flex;
+	justify-content: right;
+	align-items: center;
+
+
+}
+
+.imground {
+	
+	border-width: 3px;
+	border-bottom-style: solid;
+	border-top : 2px solid white;
+	border-bottom:  2px solid white;
+	margin :5px;
+	
+}
+
+.icon-parent {
+	display: flex;
+	flex: 3;
+	
+
+}
+
+.icon {
+	display: flex;
+	flex:2;
+	line-height :0px;
+	font-size: 30px;
+	justify-content: right;
+	text-align: right;
+	flex-direction: row-reverse;
+	padding : 10px;
+
+
+}
+
+a:hover{
+	color: inherit;
+	font-color : white;
+}

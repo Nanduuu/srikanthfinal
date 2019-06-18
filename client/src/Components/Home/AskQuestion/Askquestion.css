@@ -1,0 +1,54 @@
+
+
+p {
+	font-color: white;
+	color: white;
+
+}
+
+.question-div {
+	margin: 5px;
+}
+
+.search-display {
+ 	margin-top:  5px;
+ 	margin-bottom: 5px;
+ 	padding: 1px;
+ 	
+ 	
+ }
+
+.search-hide {
+	display: none;
+}
+
+
+.askButton {
+
+	background-color: #35383d;
+	color: white;
+	width: 50%;
+	overflow-x: hidden;
+	display: inline;
+	text-decoration: none;
+	border-color: none;
+	border :0px;
+	font-weight: bold;
+	border-radius: 3px;
+	margin-bottom: 10px;
+
+
+}
+
+.askButton:hover {
+
+	background-color: #2f518c;
+	font-weight: bold;
+	
+	
+}
+
+.askButton:focus {
+	outline:0;
+}
+

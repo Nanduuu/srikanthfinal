@@ -1,7 +1,10 @@
 
+let state = {
+	login : ""
+}
 
 
-function reducer (state , action){
+function loginreducer (state = state , action){
 
 	switch (action.type){
 		case "doLogin" :
@@ -19,4 +22,9 @@ function reducer (state , action){
 		}
 }
 
-export default reducer;
+export default loginreducer;
+
+
+
+
+

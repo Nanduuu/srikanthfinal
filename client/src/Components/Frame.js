@@ -4,13 +4,13 @@ import { Button, Radio, Icon } from 'antd';
 import { Popover,Row, Col } from 'antd';
 import {Route , Switch,Redirect} from 'react-router';
 import { Link ,withRouter} from 'react-router-dom';
-import Home from "./Home.js";
-import Why27k from "./Why27k";
-import Testimonials from "./Testimonials";
-import Contactus from "./Contactus";
+import Home from "./Home/Home.js";
+import Why27k from "./Why27tek/Why27k";
+import Testimonials from "./Testimonials/Testimonials";
+import Contactus from "./Contactus/Contactus";
 import SubmitForm from'./SubmitForm';
-import Optcpt from "./Optcpt";
-import DailySenarios from "./DailySenarios";
+import Optcpt from "./Optcpt/Optcpt";
+import DailySenarios from "./Dailysenarios/DailySenarios";
 import {connect} from 'react-redux';
 
 import Media from "react-media";
@@ -94,9 +94,9 @@ class Frame extends React.Component{
                 theme="light"
                 mode="horizontal"
                 defaultSelectedKeys={['1']}
-                style={{ lineHeight: '50px', backgroundColor : 'black',color:'white'}}
+                style={{ lineHeight: '40px', backgroundColor : 'white',color:'black'}}
               >
-              <Menu.Item key="1" style={{ fontSize:"20px",width:"20%",overflow:"hidden" ,textOverflow: 'ellipsis'}}>
+              <Menu.Item key="1" style={{ fontSize:"15px",width:"20%",overflow:"hidden" ,textOverflow: 'ellipsis'}}>
                   <Media query="(min-width: 720px)">
                     {matches =>
                       matches ? (
@@ -110,7 +110,7 @@ class Frame extends React.Component{
                 <Link to = {"/"} ></Link>
                 </Menu.Item>
                      
-              <Menu.Item key="2" style={{ fontSize:"20px",width:"20%",overflow:"hidden" ,textOverflow: 'ellipsis'}} >
+              <Menu.Item key="2" style={{ fontSize:"15px",width:"20%",overflow:"hidden" ,textOverflow: 'ellipsis'}} >
                   <Media query="(min-width: 720px)">
                     {matches =>
                       matches ? (
@@ -125,7 +125,7 @@ class Frame extends React.Component{
               </Menu.Item>
               
               
-              <Menu.Item key="3" style={{ fontSize:"20px",width:"20%",overflow:"hidden" ,textOverflow: 'ellipsis'}}>
+              <Menu.Item key="3" style={{ fontSize:"15px",width:"20%",overflow:"hidden" ,textOverflow: 'ellipsis'}}>
 
                 <Media query="(min-width: 720px)">
                     {matches =>
@@ -139,7 +139,7 @@ class Frame extends React.Component{
                 <Link to = {"/Testimonials"} ></Link>
                 </Menu.Item>
 
-                <Menu.Item key="4" style={{ fontSize:"20px",width:"20%",overflow:"hidden" ,textOverflow: 'ellipsis'}}>
+                <Menu.Item key="4" style={{ fontSize:"15px",width:"20%",overflow:"hidden" ,textOverflow: 'ellipsis'}}>
 
                 <Media query="(min-width: 720px)">
                     {matches =>
@@ -153,7 +153,7 @@ class Frame extends React.Component{
                 <Link to ={"/DailySenarios"}></Link>
                 </Menu.Item>
 
-              <Menu.Item key="5" style={{ fontSize:"20px",width:"20%",overflow:"hidden" ,textOverflow: 'ellipsis'}}>
+              <Menu.Item key="5" style={{ fontSize:"15px",width:"20%",overflow:"hidden" ,textOverflow: 'ellipsis'}}>
                     <Media query="(min-width: 720px)">
                     {matches =>
                       matches ? (
