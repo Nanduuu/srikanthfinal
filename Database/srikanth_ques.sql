@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `srikanth` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `srikanth`;
 -- MySQL dump 10.13  Distrib 5.6.23, for Win64 (x86_64)
 --
 -- Host: localhost    Database: srikanth
@@ -50,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-18  6:17:58
+-- Dump completed on 2019-06-18  6:28:01
