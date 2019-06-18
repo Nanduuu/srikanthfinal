@@ -41,7 +41,6 @@ CREATE TABLE `answer` (
 
 LOCK TABLES `answer` WRITE;
 /*!40000 ALTER TABLE `answer` DISABLE KEYS */;
-INSERT INTO `answer` VALUES (1,18,'answer',14,9,'2019-06-18 04:42:57'),(2,5,'third @ question',0,0,'2019-06-18 04:45:19'),(3,18,'second answer',1,0,'2019-06-18 05:06:55'),(4,18,'second answer',0,0,'2019-06-18 05:07:10'),(5,18,'third answer',0,0,'2019-06-18 05:09:58'),(6,16,'first comment',3,0,'2019-06-18 05:11:20'),(7,16,'second comment',0,0,'2019-06-18 05:11:39'),(8,1,'first comment',0,0,'2019-06-18 05:14:49'),(9,1,'second comment',0,0,'2019-06-18 05:15:00'),(10,1,'lksjdflkasjfdlk comment',0,0,'2019-06-18 05:15:33'),(11,1,' comment',0,0,'2019-06-18 05:16:56'),(12,18,'sarigama padanisha',0,0,'2019-06-18 05:18:57'),(13,18,'sarigama padanisha',0,0,'2019-06-18 05:19:12'),(14,18,'nanda kumar',0,0,'2019-06-18 05:20:58'),(15,5,'second comment',0,0,'2019-06-18 05:21:49'),(16,4,'trending technology',0,0,'2019-06-18 05:22:32'),(17,16,'third comment',0,0,'2019-06-18 05:23:52');
 /*!40000 ALTER TABLE `answer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -67,7 +66,7 @@ CREATE TABLE `ques` (
 
 LOCK TABLES `ques` WRITE;
 /*!40000 ALTER TABLE `ques` DISABLE KEYS */;
-INSERT INTO `ques` VALUES (1,1,'What is CyberArc','2019-05-13 03:16:32'),(4,4,'what is Devops ?','2019-05-31 01:45:39'),(5,1,'what is cyber Ark ?','2019-05-31 01:53:14'),(15,8,'What is big data ? ','2019-06-03 01:53:26'),(16,1,'Explain what is cyber Ark ?','2019-06-17 09:15:05'),(17,3,'Explain what is Splunk ?','2019-06-17 09:16:34'),(18,1,'since from when cybarark?','2019-06-17 10:54:43');
+INSERT INTO `ques` VALUES (1,1,'what is cyber ark ?','2019-06-18 06:53:28');
 /*!40000 ALTER TABLE `ques` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -113,4 +112,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-18  6:26:33
+-- Dump completed on 2019-06-18  6:56:27

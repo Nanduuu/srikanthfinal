@@ -39,7 +39,7 @@ CREATE TABLE `ques` (
 
 LOCK TABLES `ques` WRITE;
 /*!40000 ALTER TABLE `ques` DISABLE KEYS */;
-INSERT INTO `ques` VALUES (1,1,'What is CyberArc','2019-05-13 03:16:32'),(4,4,'what is Devops ?','2019-05-31 01:45:39'),(5,1,'what is cyber Ark ?','2019-05-31 01:53:14'),(15,8,'What is big data ? ','2019-06-03 01:53:26'),(16,1,'Explain what is cyber Ark ?','2019-06-17 09:15:05'),(17,3,'Explain what is Splunk ?','2019-06-17 09:16:34'),(18,1,'since from when cybarark?','2019-06-17 10:54:43');
+INSERT INTO `ques` VALUES (1,1,'what is cyber ark ?','2019-06-18 06:53:28');
 /*!40000 ALTER TABLE `ques` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-18  6:28:01
+-- Dump completed on 2019-06-18  6:55:47
