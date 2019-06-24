@@ -35,6 +35,7 @@ router.post('/',function(req,res){
 				if(err){
 					console.log(err);
 					res.send({result : false})
+					con.end();
 				}else{
 					console.log(result);
 					var data = {
@@ -49,9 +50,11 @@ router.post('/',function(req,res){
 					con.query(`update  answer set ? where ans_num = "${req.body.ans_num}"` ,data, function(err, result){
 							if(err){
 								console.log(err)
+								con.end();
 							}
 							console.log(result);
 							res.send({success:true})
+							con.end();
 					})
 				}
 				

@@ -44,19 +44,16 @@ router.post('/',function(req,res){
 					}
 
 					con.query(`insert into ques set ?` ,data, function(err, result){
-							console.log(err);
-							console.log(res);
+							
 							res.send({success:true})
+							con.end();
 					})
 				}
-				console.log(res);
+				
 			})
 		}
 	
-		  console.log(req.body)
 
-	 
-		   
 
 })
 

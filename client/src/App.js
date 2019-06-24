@@ -1,11 +1,12 @@
 import Frame from './Components/Frame';
 import Logo from './Components/Logo/Logo';
-
+import {Switch, Route, } from 'react-router';
 import React, { Component } from 'react';
-
 import 'antd/dist/antd.css';
 import './App.css';
 import WebFont from 'webfontloader';
+import Adminlogin from './Components/Adminlogin/Adminlogin';
+import Application from './Components/Application/Application';
 
 
 const fontStyle = {
@@ -27,8 +28,17 @@ class App extends Component {
     return (
         
         <div className="App" style={fontStyle}>
-          <Logo/>
-          <Frame/> 
+
+          <Switch>
+
+              <Route path='/adminlogin' component={Adminlogin}/>
+              <Route  path="/" component={Application} />
+              
+ 
+  
+         </Switch>
+            
+      
         </div>
       
     );

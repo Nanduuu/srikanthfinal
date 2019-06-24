@@ -43,9 +43,11 @@ router.post('/',function(req,res){
 				if(err){
 					console.log(err)
 					res.send({result : false,questions :[]})
+					con.end();
 				}else{
 					console.log(result)
 					res.send({success:true,questions:result})
+					con.end();
 				
 				}
 				

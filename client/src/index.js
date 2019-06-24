@@ -8,7 +8,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import store from './Components/AppRedux/AppRedux';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 

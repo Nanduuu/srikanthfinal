@@ -48,13 +48,14 @@ router.post('/',function(req,res){
 					con.query(`insert into answer set ?` ,data, function(err, result){
 							
 							res.send({success:true})
+							con.end();
 					})
 				}
 				
 			})
 		}
 	
-		  console.log(req.body)
+		  
 
 	 
 		   

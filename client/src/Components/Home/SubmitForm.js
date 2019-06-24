@@ -3,7 +3,7 @@ import formurlencoded from 'form-urlencoded';
 import {Route , Switch , Redirect} from 'react-router';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
-import { Drawer, Form, Button, Col, Row, Input, Select, Mention,DatePicker } from 'antd';
+import { Drawer, Form, message, Col, Row, Input, Select, Mention,DatePicker } from 'antd';
 const { Option } = Select;
 
 const style={
@@ -52,7 +52,7 @@ constructor(props){
 			this.setState ({Technology :e.target.value});
 
 		}
-		dateChange = (dates: moment, moment, dateStrings: string, string)=>{
+		dateChange = ( moment,  string)=>{
 			
 			this.setState ({StartDate:moment})
 
@@ -90,7 +90,7 @@ constructor(props){
 						body:formurlencoded(data),
 						headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }};
 
-			this.callApi( packet ).then((res) => {alert(res.msg);this.setState({redirect:true});})
+			this.callApi( packet ).then((res) => {message.success(res.msg);this.redirect()})
       			  .catch(err => console.log(err));
 
       			 

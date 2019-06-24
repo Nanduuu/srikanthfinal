@@ -1,7 +1,8 @@
 .border1 {
 
-	margin :0px;
-	align-items: center;
+	margin :5px;
+	padding: 5px;
+	box-align: center;
 	border-width: 0px;
 }
 

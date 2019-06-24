@@ -113,6 +113,9 @@ class Dispalyqa extends React.Component{
                         success("Answer posted .....!");
                          setTimeout(()=>{
                               this.getAnswers();
+                              this.setState({
+                                value:null,
+                              })
                          }, 1000);
 
                       }else{
@@ -181,14 +184,12 @@ class Dispalyqa extends React.Component{
 		return(
 
 			<div style={{padding:"5px",backgroundColor:"white"}}>
-				<Media>
-					
-						<Media.Body>
+				
 						    
 						      {this.state.comments.map((item)=>{
 
 
-                       return (  <ComponentRender ans_num={item.ans_num} datetime = {item.timestamp} likes={ item.likes } dislikes = { item.dislikes} content={item.answer}/> )
+                       return (  <ComponentRender ans_num={item.ans_num} datetime = {item.timestamp} likes={ item.likes } dislikes = { item.dislikes} getAnswers={()=>{this.getAnswers()}} content={item.answer}/> )
 
                   })}
 
@@ -215,14 +216,8 @@ class Dispalyqa extends React.Component{
 						          </Tooltip>
 						        )}
 					        />
-						    
-						  </Media.Body>
-				</Media>
-
-
 			</div>
 
-    
 			)
 	}
 

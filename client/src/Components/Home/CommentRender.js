@@ -2,13 +2,19 @@ import React from 'react';
 import { Comment, Icon, Tooltip, Avatar,message} from 'antd';
 import moment from 'moment';
 import axios from 'axios';
-
+import {connect} from 'react-redux'
 const success = (text)=>{
   message.success(text);
 
 }
 const error = (text)=>{
   message.error(text);
+}
+
+const mapStateToProps = (state)=>{
+  return{
+    login : state.LoginReducers.login
+  }
 }
 
 class CommentRender extends React.Component {
@@ -83,6 +89,29 @@ class CommentRender extends React.Component {
     this.updateAnswer();
   }
 
+  delete = ()=>{
+    var data = {
+        ans_num:this.state.ans_num,
+     }
+
+   axios.post('/api/deleteAnswer/', data).then( function (res){
+
+         console.log(res)
+         if(res){
+            success("Deleted")
+            this.props.getAnswers();
+           
+         }else{
+           error("Issue with Database")
+         }
+
+     }.bind(this)).catch( function(err){
+
+       console.log(err)
+       error("Issue with Database")
+     });
+  }
+
   render() {
     const { likes, dislikes, action ,datetime} = this.state;
 
@@ -111,6 +140,22 @@ class CommentRender extends React.Component {
           {dislikes}
         </span>
       </span>,
+      <span>
+
+        
+         
+          <Tooltip title="Delete">
+            { this.props.login === true ? <Icon  type="delete" onClick={this.delete} /> : null }
+          
+          </Tooltip>
+          <span style={{ paddingLeft: 8, cursor: 'auto' }}>
+          
+          </span>
+             
+        
+        
+        
+      </span>,
       
     ];
 
@@ -134,4 +179,4 @@ class CommentRender extends React.Component {
   }
 }
 
-export default CommentRender;
+export default connect(mapStateToProps)(CommentRender);

@@ -7,7 +7,6 @@ import axios from 'axios';
 import {setTechnology} from './Actions.js';
 import {connect} from 'react-redux'
 
-
 const success = (text)=>{
 	message.success(text);
 
@@ -87,6 +86,7 @@ class Askquestion extends React.Component{
 							console.log(res)
 							if(res){
 								success("Question posted .....!");
+								this.props.setTechnology({tech_num:this.props.tech_num})
 							}else{
 								error("Issue with Database")
 							}
@@ -117,7 +117,7 @@ class Askquestion extends React.Component{
 		return(
 				<div >
 						<div>
-							<h3 style={{color:"black-inline"}}>{techs[this.props.tech_num - 1]} </h3>
+							<h2 >{techs[this.props.tech_num - 1]} </h2>
 						</div>
 					
 					<div style={{display: this.state.displayAskQuestion ? "block" : "none"}}>

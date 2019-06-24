@@ -1,6 +1,6 @@
 import React from 'react';
 import Sider from './Sider';
-import { Drawer, Button } from 'antd';
+import { Drawer, Button,Icon } from 'antd';
 import './HideSider.css';
 
   
@@ -29,9 +29,9 @@ class HideSider extends  React.Component{
     return (
       <div id="border">
 
-        <Button className="button" type="primary" onClick={this.showDrawer}>
-          Technologies
-        </Button>
+        <div className="button" onClick={this.showDrawer}>
+        <Icon type="menu-fold" />
+        </div>
 
         <Drawer
           title="Technologies"

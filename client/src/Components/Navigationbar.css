@@ -1,0 +1,68 @@
+
+.navigationbar{
+	background-color: rgb(255, 254, 254);
+	height: 50px;
+		margin: 0px;
+
+		
+
+}
+
+.navigationbar ul {
+	margin:0px;
+
+}
+
+.navigationbar ul li {
+	list-style-type: none;
+	display: inline-flex;
+	align-items: center;
+	line-height: 0%;
+	padding: 0px 10px;
+	line-height: 40px;
+	color: white;
+	float: left;
+	cursor: pointer;
+	font-size: 15px;
+	margin-top:0px;
+}
+
+.navigationbar ul li:hover {
+	
+	background-color:#35383d;
+	color: white;
+	border-radius: 0px 0px 10px 10px;
+	
+}
+
+.selected{
+	background-color:#35383d;
+	color: white;
+	border-radius: 0px 0px 10px 10px;
+	
+}
+
+.selected a{
+	color: white;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+.link {
+	text-decoration: none;
+	color: black;
+}
+
+.link:hover {
+	text-decoration: none;
+	color: white;
+	font-size: 100%;
+}
+
+.link:active{
+	color: aliceblue;
+	text-decoration: none;
+}

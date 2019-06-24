@@ -1,29 +1,24 @@
 import React from 'react';
-import { Layout, Menu, Breadcrumb } from 'antd';
-import { Button, Radio, Icon } from 'antd';
-import { Popover,Row, Col } from 'antd';
+import {  Icon } from 'antd';
 import {Route , Switch,Redirect} from 'react-router';
-import { Link ,withRouter} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Home from "./Home/Home.js";
 import Why27k from "./Why27tek/Why27k";
 import Testimonials from "./Testimonials/Testimonials";
 import Contactus from "./Contactus/Contactus";
-import SubmitForm from'./SubmitForm';
 import Optcpt from "./Optcpt/Optcpt";
 import DailySenarios from "./Dailysenarios/DailySenarios";
-import {connect} from 'react-redux';
+import './Navigationbar.css';
+
 
 import Media from "react-media";
 import Login from "./Login";
-
-
-const { Header, Content, Footer , Sider} = Layout;
 
 const fontStyle ={
 
   fontfamily : "Helvetica Neue",
   color: "black",
-  
+ 
 };
 
 const mapStateToProps = (state) => {
@@ -38,7 +33,8 @@ class Frame extends React.Component{
     visible: false,
     Optcpt:"primary",
     DailySenarios:"primary",
-    redirect:false
+    redirect:false,
+    menu_selected : "home",
     };
 	}
 
@@ -68,7 +64,7 @@ class Frame extends React.Component{
     if(this.props.login == "loggedin"){
       this.setState({redirect:false})
     }
-    console.log(this.props.match);
+    
   }
   LoginRedirect = ()=>{
     if (this.state.redirect) {
@@ -80,104 +76,112 @@ class Frame extends React.Component{
     this.setState({redirect:true})
   }
   }
+
+  componentDidMount(){
+    console.log(this.props.path);
+     this.setState({
+       menu_selected : this.props.path,
+     })
+  }
+
+  componentWillReceiveProps=(nextprops)=>{
+    if(nextprops.path != this.props.path){
+      this.setState({
+        menu_selected :nextprops.path
+      })
+    }
+  }
 	render(){
+
+      var selected = this.state.menu_selected;
+
 			return(
 				<div style={fontStyle}>
-  
-          <Row>
-					<Layout>
-          <Row>
-            <Col style={{boxShadow:"2px 0px 2px black"}} lg={24} sm={24} md={24}>
- 
-              <Row>
-              <Menu
-                theme="light"
-                mode="horizontal"
-                defaultSelectedKeys={['1']}
-                style={{ lineHeight: '40px', backgroundColor : 'white',color:'black'}}
-              >
-              <Menu.Item key="1" style={{ fontSize:"15px",width:"20%",overflow:"hidden" ,textOverflow: 'ellipsis'}}>
+  			
+           <div className="navigationbar">
+                <ul>
+                  <li  className={selected === "/" ?'selected' : null  } >
+                  <Link class="link" to = {"/"} >
                   <Media query="(min-width: 720px)">
                     {matches =>
                       matches ? (
-                      <span><Icon type="home" theme="outlined" />Home</span>
+                      <span>Home</span>
                       ) : (
                       <Icon type="home" theme="outlined" />
                       )
                     }
                     </Media>
 
-                <Link to = {"/"} ></Link>
-                </Menu.Item>
+                    </Link>
+                 </li>
                      
-              <Menu.Item key="2" style={{ fontSize:"15px",width:"20%",overflow:"hidden" ,textOverflow: 'ellipsis'}} >
+                  <li className={selected === '/Why27k' ?'selected' : null  }>
+                  <Link class="link"  to = {'/Why27k'}>
                   <Media query="(min-width: 720px)">
                     {matches =>
                       matches ? (
-                      <span><Icon type="question" theme="outlined" />Why 27Tek</span>
+                      <span>Why 27Tek</span>
                       ) : (
                       <Icon type="question" theme="outlined" />
                       )
                     }
                     </Media>
 
-              <Link to = {'/Why27k'}> </Link>
-              </Menu.Item>
+                     </Link>
+                    </li>
               
               
-              <Menu.Item key="3" style={{ fontSize:"15px",width:"20%",overflow:"hidden" ,textOverflow: 'ellipsis'}}>
-
+                    <li className={selected === "/Testimonials" ?'selected' : null  }>
+                    <Link class="link" to = {"/Testimonials"} >
                 <Media query="(min-width: 720px)">
                     {matches =>
                       matches ? (
-                      <span><Icon type="database" theme="outlined" />Testimonials</span>
+                      <span>Testimonials</span>
                       ) : (
                       <Icon type="database" theme="outlined" />
                       )
                     }
                     </Media>
-                <Link to = {"/Testimonials"} ></Link>
-                </Menu.Item>
-
-                <Menu.Item key="4" style={{ fontSize:"15px",width:"20%",overflow:"hidden" ,textOverflow: 'ellipsis'}}>
-
+                </Link>
+                
+                    </li>
+                    <li className={selected === "/DailySenarios" ?'selected' : null  }>
+                    <Link class="link" to ={"/DailySenarios"}>
                 <Media query="(min-width: 720px)">
                     {matches =>
                       matches ? (
-                      <span><Icon type="database" theme="outlined" />DailySenarios </span>
+                      <span>DailySenarios </span>
                       ) : (
                       <Icon type="database" theme="outlined" />
                       )
                     }
                     </Media>
-                <Link to ={"/DailySenarios"}></Link>
-                </Menu.Item>
+                </Link>
+                    </li>
 
-              <Menu.Item key="5" style={{ fontSize:"15px",width:"20%",overflow:"hidden" ,textOverflow: 'ellipsis'}}>
+                    <li className={selected === "/Contactus" ?'selected' : null  }>
+                    <Link class="link" to = {"/Contactus"}>
                     <Media query="(min-width: 720px)">
                     {matches =>
                       matches ? (
-                      <span><Icon type="team" theme="outlined" />Contact us</span>
+                      <span> Contact us</span>
                       ) : (
                       <Icon type="team" theme="outlined" />
                       )
                     }
                     </Media>
 
-                <Link to = {"/Contactus"}>
-                </Link> </Menu.Item>
-              </Menu>
-        			</Row>
-      				
+                </Link>
+                </li>
+                </ul>
+               </div> 
+        		
     				
-            </Col>
-            </Row>
-    				
-      			</Layout>
+      
                
-             <Row >
+             
               
-                  <Col md={24} lg={24} sm={24} style={{padding:"0px"}} >
+                  <div style={{padding:"0px"}} >
                       
                         <Switch>
                           <Route exact path= {"/"} component={Home}/>                                                           
@@ -186,16 +190,15 @@ class Frame extends React.Component{
                           <Route path= {'/Contactus' } component={Contactus}/>
                           <Route path= {'/Optcpt' } component={Optcpt}/>
                           <Route path= {'/DailySenarios' } component={DailySenarios}/>
-                          <Route path= {'/SubmitForm' } component={SubmitForm}/>
                           <Route path={'/Login'} component={Login}/>
                           
                           
                         </Switch>
-                  </Col>
+                  </div>
              
-              </Row>
             
-          </Row>
+            
+          
 				</div>
 				);
 	}

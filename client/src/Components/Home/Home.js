@@ -1,24 +1,14 @@
 import React from 'react';
-import { Layout, Menu, Breadcrumb } from 'antd';
-import { Radio, Icon } from 'antd';
 import { Row, Col } from 'antd';
-import Submit from './Submit';
-import {Route , Switch} from 'react-router';
-import { Link } from 'react-router-dom';
-import { Jumbotron,} from 'reactstrap';
-import { Input, Button} from 'antd';
-import { Modal,Popover } from 'antd';
+import { Button} from 'antd';
+import { Modal, } from 'antd';
 import SubmitForm from './SubmitForm';
 import Sider from './Sider/Sider';
 import HideSider from './Sider/HideSider'
 import Askquestion from './AskQuestion/Askquestion';
-import Displayqa from './Displayqa';
 import Displayquestions from './Displayquestions/Displayquestions'
 import './Home.css';
 
-
-const Sidebar = Layout.Sider;
-const { Header, Content, Footer } = Layout;
 
 class Home extends React.Component{
   constructor(props){
@@ -66,11 +56,11 @@ class Home extends React.Component{
 					     <div>                             
                              <div className="submit">
                                <Row >
-                               	<Col onClick={this.showModal} className="mega" xl={12} sm={12} md={12} style={{padding:"10px"}} >
-                                 	 Are you looking for Training ?
+                               	<Col xl={12} sm={12} md={12}  >
+                                 	<div onClick={this.showModal} type="primary"> Are you looking for Training ? </div>
                                 </Col>
-                               	<Col onClick={this.showModal} className="mega" xl={12} sm={12} md={12} style={{padding:"10px"}} >
-                                    Are you looking for Job Support ?
+                               	<Col  xl={12} sm={12} md={12} style={{padding:"ppx 10px"}} >
+                                 <div onClick={this.showModal} type="primary"> Are you looking for Job Support ? </div>
   								              </Col>
   							               </Row>
                              </div>
@@ -94,13 +84,10 @@ class Home extends React.Component{
                                             <Sider tech_num = {this.tech_num}/>
                                        </div>
                                        <div className="flex-element2">
-                                          
-                                        <Askquestion tech_num = { this.state.tech_num }/>
-
-                                        <Displayquestions/>
-                                          
+                                            <Askquestion tech_num = { this.state.tech_num }/>
+                                            <Displayquestions/>
+                  
                                        </div>
-
                              </div>
                </div>
 			);

@@ -1,7 +1,7 @@
 
 
 
-function loginreducer (state = { login: 'notloggedin' }, action){
+function loginreducer (state = { login: false }, action){
 
 	switch (action.type){
 		case "doLogin" :
@@ -15,6 +15,11 @@ function loginreducer (state = { login: 'notloggedin' }, action){
 					}
 			 
 			 break;
+		case 'SET_LOGIN':
+				return Object.assign({},state, {login:true})	
+			 break;
+		case 'SET_LOGOUT' :
+			   return Object.assign({},state,{login:false})
 		default: return state;
 		}
 }
